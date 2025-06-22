@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Sparkles, Footprints, Activity } from "lucide-react";
 import "./index.css";
 
 export default function FitWalk() {
@@ -91,7 +90,7 @@ export default function FitWalk() {
       <div className="card">
         <h2>🏰 Your Rewards</h2>
         <p className="coins">
-          <Sparkles className="icon" /> {coins.toFixed(0)} Coins
+          ✨ {coins.toFixed(0)} Coins
         </p>
       </div>
 
@@ -114,7 +113,7 @@ export default function FitWalk() {
           setIsWalking((w) => !w);
           if (!isWalking) setLastPosition(null);
         }}>
-          <Activity className="icon" /> {isWalking ? "Pause Walk" : "Start Walk"}
+          {isWalking ? "⏸ Pause Walk" : "▶️ Start Walk"}
         </button>
 
         <button className="reset" onClick={() => {
@@ -124,9 +123,13 @@ export default function FitWalk() {
           setIsWalking(false);
           setLastPosition(null);
         }}>
-          <Footprints className="icon" /> Restart
+          🔁 Restart
         </button>
       </div>
+
+      <footer style={{ marginTop: "3rem", padding: "1rem 0", borderTop: "1px solid #555", color: "#aaa", textAlign: "center", fontSize: "0.9rem" }}>
+        © {new Date().getFullYear()} Fit Walk. Stay healthy. Stay inspired. 🚶‍♂️✨
+      </footer>
     </div>
   );
 }
